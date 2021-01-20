@@ -1,0 +1,4 @@
+name = "Ledjer"
+uuid = "4d0c1207-dbc8-48ee-b727-109c145deefa"
+authors = ["David Nies <david.nies@posteo.de>"]
+version = "0.1.0"
