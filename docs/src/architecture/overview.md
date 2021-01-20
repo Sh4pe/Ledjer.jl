@@ -1,5 +1,12 @@
 Initial text
 
+```@eval
+run(`plantuml test.pu -tsvg`)
+nothing
+```
+
+![](test.svg)
+
 # Introduction and Goals
 
 ## Requirements Overview
