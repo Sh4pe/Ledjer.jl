@@ -4,7 +4,7 @@ This document contains the architecture overview of Ledjer.
 
 ## Requirements Overview
 
-### What is Ledjer
+### What is Ledjer?
 
 * Ledjer is an interactive system to analyze your finances.
 * It targets a technical audience that is comfortable using a Julia REPL.
@@ -51,6 +51,25 @@ importance. The category in brackets is the software quality characteristic ment
 | *<Role-2> | *<Contact-2>*           | *<Expectation-2>*       |
 
 # Architecture Constraints
+
+## Technical constraints
+
+| Constraint | Description, background |
+| ---------- | ----------------------- |
+| Written in Julia | Ledjer is written in Julia. After all, this is a hobby project and this language is most fun and effortless for the author. |
+| Low hardware requirements | Initial development started in 2021 on a 2013 MacBook Pro. That must be enough. |
+| Platform independance | Ledjer runs everywhere Julia runs - which is almost everywhere ;) |
+
+## Organizational constraints
+
+| Constraint | Description, background |
+| ---------- | ----------------------- |
+| Team | At the moment, only David Nies. Hopefully, some folks will join later on. |
+| Open source | The repository and documentation will be on GitHub so that everyone interested can use it. |
+
+## Conventions
+
+tbd.
 
 # System Scope and Context
 
