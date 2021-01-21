@@ -1,17 +1,47 @@
-Initial text
-
-```@eval
-run(`plantuml test.pu -tsvg`)
-nothing
-```
-
-![](test.svg)
+This document contains the architecture overview of Ledjer.
 
 # Introduction and Goals
 
 ## Requirements Overview
 
+### What is Ledjer
+
+* Ledjer is an interactive system to analyze your finances.
+* It targets a technical audience that is comfortable using a Julia REPL.
+* It can import transactions from banks and can provide reports and visualizations of these.
+
+### Essential features
+
+* Is extensible: input formats (like CSVs from new banks) and output artifacts (like repots, visualizations)
+  can be added later on.
+* It has flexible rules for classifying transactions can be added comfortably.
+* Users can quickly debug rules they've added.
+* It uses double-entry bookkeeping.
+* It provides a thorough REPL interface. 
+* It may also provide a web interface.
+
 ## Quality Goals
+
+The quality goals of Ledjer will be classified using the software quality characteristics in ISO/IEC 25010.
+They are shown in the following mindmap.
+
+```@eval
+run(`plantuml software_quality.pu -tsvg`)
+nothing
+```
+
+![](software_quality.svg)
+
+The following table contains the most important quality goals of Ledjer, routhly ordered by their 
+importance. The category in brackets is the software quality characteristic mentioned above.
+
+| Quality goal   | Motivation and explanation |
+| ----------- |  -------------------- |
+| Adaptable to new banks (Maintainability) | It is easy to implement readers for new CSV formats, new reports and new visualizations |
+| Easy to use (Usability) | The REPL interface is readily understood by able REPL users and the graphical interface can be learned by playing around with it.  |
+| Ledjer is fast (Performance) | Reading CSVs and generating reports for it should be a breeze, even on older laptops. The web interface is snappy so that it is fun to use. |
+| Robust data model (Reliability) | Users cannot skrew up the database, unless they directly mess with the input CSVs. |
+| Minimal configuration (Usability) | Users need only supply a CSV data directory and a directory containing config files and Ledjer will work without problems. |
 
 ## Stakeholders
 

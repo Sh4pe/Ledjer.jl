@@ -1,0 +1,42 @@
+@startmindmap
++ Software quality
+++ Functional Suitability
++++_ Functional Completeness
++++_ Functional Correctness
++++_ Functional Appropriateness
+++ Performance Efficiency
++++_ Time Behaviour
++++_ Resource Utilization
++++_ Capacity
+++ Compatibility
++++_ Co-existence
++++_ Interoperability
+++ Usability
++++_ Appropriateness Recognizability
++++_ Learnability
++++_ Operability
++++_ User Error Protection
++++_ User Interface Aesthetics
++++_ Accessibility
+-- Reliability
+---_ Maturity
+---_ Availability
+---_ Fault Tolerance
+---_ Recoverability
+-- Security
+---_ Confidentiality
+---_ Integrity
+---_ Non-repuditation
+---_ Authenticity
+---_ Accountability
+-- Maintainability
+---_ Modularity
+---_ Reusability
+---_ Analysability
+---_ Modifiability
+---_ Testability
+-- Portability
+---_ Adaptability
+---_ Installability
+---_ Replacability
+@endmindmap
