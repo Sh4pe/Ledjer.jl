@@ -75,17 +75,46 @@ tbd.
 
 ## Business Context
 
-**<Diagram or Table>**
+```@eval
+run(`plantuml business_context.pu -tsvg`)
+nothing
+```
 
-**<optionally: Explanation of external domain interfaces>**
+![](business_context.svg)
+
+**Human user**
+
+...
+
+**Bank (neighbour system)**
+
+...
+
+**Local computer (neighbour system)**
+
+...
 
 ## Technical Context
 
-**<Diagram or Table>**
+```@eval
+run(`plantuml technical_context.pu -tsvg`)
+nothing
+```
 
-**<optionally: Explanation of technical interfaces>**
+![](technical_context.svg)
 
-**<Mapping Input/Output to Channels>**
+**REPL**
+
+...
+
+**Browser**
+
+...
+
+**Local filesystem**
+
+...
+
 
 # Solution Strategy
 

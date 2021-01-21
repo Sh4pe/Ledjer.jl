@@ -1,0 +1,24 @@
+@startuml
+
+node Bank
+
+node "Local computer" as local_comp
+
+[Ledjer] << system >>
+
+:Human user: -- [Ledjer]
+note on link 
+    via REPL or browser
+end note
+
+Bank -- Ledjer
+note on link
+    CSV
+end note
+
+local_comp -- Ledjer
+note on link
+    Storage of configs and data
+end note
+
+@enduml

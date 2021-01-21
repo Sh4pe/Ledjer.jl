@@ -1,0 +1,31 @@
+@startuml
+
+node REPL
+
+node Browser
+
+node "Local filesystem" as local_fs
+
+[Ledjer] << system >>
+
+REPL -- [Ledjer]
+note on link
+    Text based communication
+end note
+
+Browser -- [Ledjer]
+note on link
+    HTTP/WebSocket
+end note
+
+local_fs --> [Ledjer]
+note on link
+    Input files
+end note
+
+local_fs <-- [Ledjer]
+note on link
+    Storage of configuration
+end note
+
+@enduml
