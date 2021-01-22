@@ -1,0 +1,40 @@
+@startuml
+
+component "Ledjer" << system >> {
+    [Configuration] << subsystem >>
+    [Data Loader] << subsystem >> as DataLoader
+    [Account Manager] << subsystem >> as AccountManager
+    [Reports] << subsystem >>
+    [Web] << subsystem >>
+    [Rules] << subsystem >>
+}
+
+Rules ..> Configuration
+DataLoader ..> Rules
+DataLoader ..> Configuration
+AccountManager ..> DataLoader
+AccountManager ..> Configuration
+Reports ..> AccountManager
+Web ..> Reports
+Web ..> Configuration
+
+interface REPL 
+interface Browser
+interface "CSV Data" as CSVData
+interface Config
+
+node "Local filesystem" as LocalFS
+
+Config -0)- Configuration
+
+CSVData -0)- DataLoader
+
+LocalFS --( Config
+LocalFS --( CSVData
+
+REPL -0)- Reports
+
+Browser -0)- Web
+
+
+@enduml

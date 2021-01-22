@@ -14,6 +14,7 @@ This document contains the architecture overview of Ledjer.
 
 * Is extensible: input formats (like CSVs from new banks) and output artifacts (like repots, visualizations)
   can be added later on.
+* For this, a kind of "plug-in system" is in place.
 * It has flexible rules for classifying transactions can be added comfortably.
 * Users can quickly debug rules they've added.
 * It uses double-entry bookkeeping.
@@ -37,7 +38,7 @@ importance. The category in brackets is the software quality characteristic ment
 
 | Quality goal   | Motivation and explanation |
 | ----------- |  -------------------- |
-| Adaptable to new banks (Maintainability) | It is easy to implement readers for new CSV formats, new reports and new visualizations |
+| Adaptable to new banks (Maintainability) | It is easy to implement readers for new CSV formats using plug-in system. |
 | Easy to use (Usability) | The REPL interface is readily understood by able REPL users and the graphical interface can be learned by playing around with it.  |
 | Ledjer is fast (Performance) | Reading CSVs and generating reports for it should be a breeze, even on older laptops. The web interface is snappy so that it is fun to use. |
 | Robust data model (Reliability) | Users cannot skrew up the database, unless they directly mess with the input CSVs. |
@@ -122,21 +123,35 @@ nothing
 
 ## Whitebox Overall System
 
-***<Overview Diagram>***
-
 Motivation
 
 :   *<text explanation>*
 
-Contained Building Blocks
+x --> y means x depends on y
 
-:   *<Description of contained building block (black boxes)>*
+```@eval
+run(`plantuml building_block_lvl1.pu -tsvg`)
+nothing
+```
 
-Important Interfaces
+![](building_block_lvl1.svg)
 
-:   *<Description of important interfaces>*
 
-### <Name black box 1>
+Ledjer contains these subsystems:
+
+* **Configuration**: foo
+* **Rules**: foo
+* **Data Loader**: foo
+* **Account Manager**: foo
+* **Reports**: foo
+* **Web**: foo
+
+Configuration interfaces:
+
+* iface1
+* iface2...
+
+### Configuration
 
 *<Purpose/Responsibility>*
 
@@ -150,19 +165,89 @@ Important Interfaces
 
 *<(optional) Open Issues/Problems/Risks>*
 
-### <Name black box 2>
+### Rules
 
-*<black box template>*
+*<Purpose/Responsibility>*
 
-### <Name black box n>
+*<Interface(s)>*
 
-*<black box template>*
+*<(Optional) Quality/Performance Characteristics>*
 
-### <Name interface 1>
+*<(Optional) Directory/File Location>*
 
-...
+*<(Optional) Fulfilled Requirements>*
 
-### <Name interface m>
+*<(optional) Open Issues/Problems/Risks>*
+
+### Configuration
+
+*<Purpose/Responsibility>*
+
+*<Interface(s)>*
+
+*<(Optional) Quality/Performance Characteristics>*
+
+*<(Optional) Directory/File Location>*
+
+*<(Optional) Fulfilled Requirements>*
+
+*<(optional) Open Issues/Problems/Risks>*
+
+### Data Loader
+
+*<Purpose/Responsibility>*
+
+*<Interface(s)>*
+
+*<(Optional) Quality/Performance Characteristics>*
+
+*<(Optional) Directory/File Location>*
+
+*<(Optional) Fulfilled Requirements>*
+
+*<(optional) Open Issues/Problems/Risks>*
+
+### Account Manager
+
+*<Purpose/Responsibility>*
+
+*<Interface(s)>*
+
+*<(Optional) Quality/Performance Characteristics>*
+
+*<(Optional) Directory/File Location>*
+
+*<(Optional) Fulfilled Requirements>*
+
+*<(optional) Open Issues/Problems/Risks>*
+
+### Reports
+
+*<Purpose/Responsibility>*
+
+*<Interface(s)>*
+
+*<(Optional) Quality/Performance Characteristics>*
+
+*<(Optional) Directory/File Location>*
+
+*<(Optional) Fulfilled Requirements>*
+
+*<(optional) Open Issues/Problems/Risks>*
+
+### Web
+
+*<Purpose/Responsibility>*
+
+*<Interface(s)>*
+
+*<(Optional) Quality/Performance Characteristics>*
+
+*<(Optional) Directory/File Location>*
+
+*<(Optional) Fulfilled Requirements>*
+
+*<(optional) Open Issues/Problems/Risks>*
 
 ## Level 2
 
