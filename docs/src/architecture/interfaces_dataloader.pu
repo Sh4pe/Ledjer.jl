@@ -1,0 +1,11 @@
+@startuml
+
+abstract class CSVKind
+
+class CSVMyBank {
+    load_csv(CSVMyBAnk) : Transactions
+}
+
+CSVMyBank --> CSVKind : << instantiates >>
+
+@enduml

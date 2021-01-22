@@ -195,9 +195,17 @@ Configuration interfaces:
 
 ### Data Loader
 
-*<Purpose/Responsibility>*
+The Data Loader loads CSV files from data directories and converts them to transaction lists.
+CSV parsing may differ considerably depending on the actual CSV file format. Parsing is done
+using the flexible plug-in system. In order for this to work, Data Loader has to know
+which CSV files need which parser. 
 
-*<Interface(s)>*
+```@eval
+run(`plantuml interfaces_dataloader.pu -tsvg`)
+nothing
+```
+
+![](interfaces_dataloader.svg)
 
 *<(Optional) Quality/Performance Characteristics>*
 
