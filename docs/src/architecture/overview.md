@@ -167,9 +167,22 @@ Configuration interfaces:
 
 ### Rules
 
-*<Purpose/Responsibility>*
+The Rules are responsible for transforming Transactions, i.e. turning Transactions into
+Transactions again, but with altered or added fields. Usually, Rules are used to
+transform transactions loaded by the Data Loader (*raw transactions*) into Transactions
+that you actually work with.
 
-*<Interface(s)>*
+This is the Rules contract:
+* The input Transactions must remain constant
+
+These are the important interfaces:
+
+```@eval
+run(`plantuml interfaces_rules.pu -tsvg`)
+nothing
+```
+
+![](interfaces_rules.svg)
 
 *<(Optional) Quality/Performance Characteristics>*
 

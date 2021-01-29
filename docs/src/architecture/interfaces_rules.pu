@@ -1,0 +1,46 @@
+@startuml
+
+abstract class AbstractRule {
+    appliesToRow(::AbstractRule, ::DataFrameRow) :: Bool (**abstract**)
+    appliesToTransactions(::AbstractRule, ::Transactions) :: Bool
+
+    applyToRow(::AbstractRule, ::DataFrameRow) :: NamedTuple (**abstract**)
+    applyToTransactions(::AbstractRule, ::Transactions) :: Transactions
+}
+
+class RowTransformation {
+
+}
+note right: This needs to be elaborated. Easy and extensible transformation of Rows.
+
+class RegExRule {
+    column :: Symbol
+    transformation :: RowTransformation
+
+    appliesToRow(::RegExRule, ::DataFrameRow) :: Bool
+    applyToRow(::AbstractRuRegExRule, ::DataFrameRow) :: NamedTuple
+}
+
+class AndRule {
+    a :: AbstractRule
+    b :: AbstractRule
+
+    appliesToRow(::AndRule, ::DataFrameRow) :: Bool
+    applyToRow(::AndRule, ::DataFrameRow) :: NamedTuple
+}
+
+class OrRule {
+    a :: AbstractRule
+    b :: AbstractRule
+
+    appliesToRow(::OrRule, ::DataFrameRow) :: Bool
+    applyToRow(::OrRule, ::DataFrameRow) :: NamedTuple
+}
+
+RegExRule ..> AbstractRule : << instantiates >>
+AndRule ..> AbstractRule
+OrRule ..> AbstractRule
+
+RowTransformation --> RegExRule
+
+@enduml

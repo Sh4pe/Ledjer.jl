@@ -10,7 +10,7 @@ package "plug-in MyBank" {
 
 package "Base DataLoader" {
 
-    abstract class CSVKind
+    abstract class AbstractBankCSV
 
     class Transactions {
         df :: DataFrame 
@@ -19,15 +19,17 @@ package "Base DataLoader" {
         df.comment :: Vector{String}
         df.account1 :: Vector{String}
         df.account2 :: Vector{String}
-        df.amount :: Vector{String}
+        df.amount :: Vector{Float64}
         df.currency :: Vector{String}
+        df.otherField1 :: Vector{String}
+        df.otherFieldN :: Vector{String}
 
         merge(a::Transactions, b::Transactions) :: Transactions
     }
 }
 
 
-CSVMyBank --> CSVKind : << instantiates >>
+CSVMyBank --> AbstractBankCSV : << instantiates >>
 Transactions --> CSVMyBank
 
 @enduml

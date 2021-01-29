@@ -9,9 +9,9 @@ component "Ledjer" << system >> {
 }
 
 Rules ..> Configuration
-DataLoader ..> Rules
+DataLoader <.. Rules
 DataLoader ..> Configuration
-Reports ..> DataLoader
+Reports ..> Rules
 Web ..> Reports
 Web ..> Configuration
 
