@@ -1,11 +1,33 @@
 @startuml
 
-abstract class CSVKind
+package "plug-in MyBank" {
+    class CSVMyBank {
+        path :: String
 
-class CSVMyBank {
-    load_csv(CSVMyBAnk) : Transactions
+        load_csv(::CSVMyBank) :: Transactions
+    }
 }
 
+package "Base DataLoader" {
+
+    abstract class CSVKind
+
+    class Transactions {
+        df :: DataFrame 
+        df.date :: Vector{Date}
+        df.description :: Vector{String}
+        df.comment :: Vector{String}
+        df.account1 :: Vector{String}
+        df.account2 :: Vector{String}
+        df.amount :: Vector{String}
+        df.currency :: Vector{String}
+
+        merge(a::Transactions, b::Transactions) :: Transactions
+    }
+}
+
+
 CSVMyBank --> CSVKind : << instantiates >>
+Transactions --> CSVMyBank
 
 @enduml
