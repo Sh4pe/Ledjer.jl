@@ -3,7 +3,6 @@
 component "Ledjer" << system >> {
     [Configuration] << subsystem >>
     [Data Loader] << subsystem >> as DataLoader
-    [Account Manager] << subsystem >> as AccountManager
     [Reports] << subsystem >>
     [Web] << subsystem >>
     [Rules] << subsystem >>
@@ -12,9 +11,7 @@ component "Ledjer" << system >> {
 Rules ..> Configuration
 DataLoader ..> Rules
 DataLoader ..> Configuration
-AccountManager ..> DataLoader
-AccountManager ..> Configuration
-Reports ..> AccountManager
+Reports ..> DataLoader
 Web ..> Reports
 Web ..> Configuration
 

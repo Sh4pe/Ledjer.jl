@@ -207,28 +207,6 @@ nothing
 
 ![](interfaces_dataloader.svg)
 
-*<(Optional) Quality/Performance Characteristics>*
-
-*<(Optional) Directory/File Location>*
-
-*<(Optional) Fulfilled Requirements>*
-
-*<(optional) Open Issues/Problems/Risks>*
-
-### Account Manager
-
-*<Purpose/Responsibility>*
-
-*<Interface(s)>*
-
-*<(Optional) Quality/Performance Characteristics>*
-
-*<(Optional) Directory/File Location>*
-
-*<(Optional) Fulfilled Requirements>*
-
-*<(optional) Open Issues/Problems/Risks>*
-
 ### Reports
 
 *<Purpose/Responsibility>*
